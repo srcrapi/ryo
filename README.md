@@ -1,7 +1,7 @@
 <!-- Header -->
 # Ryo
 
-## Ryo is an app installer to make a base installation, and for the dev's one IDE
+## Ryo is an app installer for windows to make a base installation, and for the dev's one IDE
 
 <h2 align="center">
     <img src="resources/ryo_image.jpg" alt="app-image">
@@ -12,14 +12,16 @@
 
 <p>[ <a href="README.md">English</a> ] [ <a href="README-PT.md">Portuguese</a> ]</p>
 
-### OS support
+### OS version support
 
 | OS      | ✅   |
 | ------- | --- |
-| Windows | ✓   |
-| Linux   | x   |
-| MacOS   | x   |
+| Windows 11 | ✓  |
+| Windows 10 | ✓  |
+| Windows 7 | ✓  |
+> Not sure if windows 7 will work properly
 
+<br>
 <p>This program still in development and may contain bugs and bad visual.</p>
 
 ## Preview
@@ -29,7 +31,17 @@
 ![Preview-2](resources/previews/preview2.png)
 
 
-<h2>Todo</h2>
+## Issues and Pull requests
+<p>
+	If you have any issue, don't hesitate to open one. <br>
+	<strong>Pull requests Welcome!</strong>
+</p>
+
+- <a href="https://github.com/srcrapi/ryo/issues">Issues</a>
+- <a href="https://github.com/srcrapi/ryo/pulls">Pull Requests</a>
+
+
+## Todo
 
 - [ ] **Make more installer options**
 - [ ] **Make installer categories instead of base installations**

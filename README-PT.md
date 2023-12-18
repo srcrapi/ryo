@@ -12,15 +12,16 @@
 
 <p>[ <a href="README.md">English</a> ] [ <a href="README-PT.md">Portuguese</a> ]</p>
 
-### Suporte OS
+### Versão suporte OS
 
 | OS      | ✅   |
 | ------- | --- |
-| Windows | ✓   |
-| Linux   | x   |
-| MacOS   | x   |
+| Windows 11 | ✓  |
+| Windows 10 | ✓  |
+| Windows 7 | ✓  |
+> Não tenho certeza se o Windows 7 funcionará corretamente
 
-
+<br>
 <p>Este programa ainda está em desenvolvimento e pode conter bugs e mau visual</p>
 
 ## Preview
@@ -29,8 +30,17 @@
 
 ![Preview-2](resources/previews/preview2.png)
 
+## Questões e Solicitações
+<p>
+	Se tiveres alguma questão ou problema não hesites em abrir uma.
+	<br>
+	<strong>Solicitações são Bem-Vindas!</strong>
+</p>
 
-<h2>Todo</h2>
+- <a href="https://github.com/srcrapi/ryo/issues">Issues</a>
+- <a href="https://github.com/srcrapi/ryo/pulls">Pull Requests</a>
+
+## Todo
 
 - [ ] **Fazer mais opções de instalação**
 - [ ] **Fazer categorias de instalação em vês de instalações base**
