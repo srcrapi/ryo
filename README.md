@@ -9,7 +9,7 @@
 
 <!-- Informations -->
 <h3>Languages</h3>
-<p><a href="README.md">English</a> <br> <a href="READNE-PT.md">Portuguese</a></p>
+<p><a href="README.md">English</a> <br> <a href="README-PT.md">Portuguese</a></p>
 
 <h3>OS support</h3>
 
