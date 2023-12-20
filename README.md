@@ -42,7 +42,7 @@ If you get some error and can't do use this
 
 <br>
 
-- [i] This program still in development and may contain bugs and bad visual.
+<p>This program still in development and may contain bugs and bad visual.</p>
 
 ## Preview
 
