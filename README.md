@@ -41,7 +41,8 @@ If you get some error and can't do use this
 ```
 
 <br>
-<p>This program still in development and may contain bugs and bad visual.</p>
+
+- [i] This program still in development and may contain bugs and bad visual.
 
 ## Preview
 
