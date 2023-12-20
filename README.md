@@ -22,6 +22,24 @@
 > Not sure if windows 7 will work properly
 
 <br>
+
+<p>To make sure the script runs properly please set the right policy.</p>
+- RemoteSigned - Let you run local scripts
+- Unsigned - Let you run local scripts and internet scripts
+> Chose only one.
+
+```powershell
+> Set-ExecutionPolicy RemoteSigned
+> Set-ExecutionPolicy Unsigned
+```
+
+If you get some error and can't do use this
+```powershell
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unsigned
+```
+
+<br>
 <p>This program still in development and may contain bugs and bad visual.</p>
 
 ## Preview
@@ -33,7 +51,7 @@
 
 ## Issues and Pull requests
 <p>
-	If you have any issue, don't hesitate to open one. <br>
+	If you have any issue, just open one. <br>
 	<strong>Pull requests Welcome!</strong>
 </p>
 

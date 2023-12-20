@@ -32,7 +32,7 @@
 
 ## Questões e Solicitações
 <p>
-	Se tiveres alguma questão ou problema não hesites em abrir uma.
+	Se tiveres alguma questão ou problema apenas abre uma.
 	<br>
 	<strong>Solicitações são Bem-Vindas!</strong>
 </p>
