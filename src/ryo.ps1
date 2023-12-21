@@ -4,30 +4,49 @@
 . "$PSScriptRoot\modules\uninstall.ps1"
 . "$PSScriptRoot\modules\global.ps1"
 
-
 # ryo 1.0
 
-function installChoco {
-    Set-ExecutionPolicy Bypass -Scope Process -Force;
-    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+function showAbout {
+    showLogo
+
+    Write-Host "  +------------------------------------------------+"
+    Write-Host "  |                      Ryo                       |"
+    Write-Host "  |          Windows Application Installer         |"
+    Write-Host "  +------------------------------------------------+"
+    Write-Host "  |                OS      : Windows               |"
+    Write-Host "  |                Version : 1.0                   |"
+    Write-Host "  |                Author  : rap1                  |"
+    Write-Host "  +------------------------------------------------+"
+    Write-Host ""
+    Write-Host "  Description"
+    Write-Host ""
+    Write-Host "  Ryo is a script write in powershell"
+    Write-Host "  with the objetive to be an app installer for windows."
+    Write-Host ""
+    Write-Host "                      [b] Back"
+    Write-Host ""
+    Write-Host ""
+    $back = Read-Host "  -> Option "
+    
+    while ($back -ne "b") {
+        Write-Host "  [!] Enter a valid value."
+        $back = Read-Host "  -> Option "
+    }
+
+    menu
+}
+
+function ryoExit {
+    Write-Host ""
+    Write-Host "  [*] Thank you for using ryo."
+    Write-Host "  [*] For more info you can always contact me on discord: buaq"
+    Write-Host ""
+    exit
 }
 
 function menu {
-    Write-Host ""
-    Write-Host "    +--------------------------------------+"
-    Write-Host "    |                                      |"
-    Write-Host "    |      ██████╗ ██╗   ██╗ ██████╗       |"
-    Write-Host "    |      ██╔══██╗╚██╗ ██╔╝██╔═══██╗      |"
-    Write-Host "    |      ██████╔╝ ╚████╔╝ ██║   ██║      |"
-    Write-Host "    |      ██╔══██╗  ╚██╔╝  ██║   ██║      |"
-    Write-Host "    |      ██║  ██║   ██║   ╚██████╔╝      |"
-    Write-Host "    |      ╚═╝  ╚═╝   ╚═╝    ╚═════╝       |"
-    Write-Host "    |                                      |"
-    Write-Host "    +--------------------------------------+"
-    Write-Host ""
-    Write-Host "                 Welcome to ryo"
-    Write-Host "                    By rap1"
+    showLogo
+
     Write-Host ""
     Write-Host ""
     Write-Host "         [1] Install       [2] Uninstall"
@@ -46,11 +65,14 @@ function menu {
             Uninstall # go to uninstall.ps1
         }
         "q" {
-            exit
+            ryoExit
+        }
+        "a" {
+            showAbout   
         }
 
         Default {
-            Write-Host "  [!] Enter a valid number."
+            Write-Host "  [!] Enter a valid value."
         }
     }
 }
@@ -60,18 +82,20 @@ function Test-IsRunAsAdmin {
     $currentUser.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
-
-# Install choco if dont have
-if (-not (Test-Path $chocoPath -PathType Leaf)) {
-    installChoco
-}
-
-# Verifica se o termianl foi aberto como Admin ou não
+# Verifica se o terminal foi aberto como Admin ou não
 if (-not (Test-IsRunAsAdmin)) {
     Write-Host ""
-    Write-Host "[!] Run the script as Administrator."
+    Write-Host "  [!] Run the script as Administrator."
     Write-Host ""
     exit
+}
+
+
+# Verify if choco exists
+if (-not (Test-Path $chocoPath)) {
+    Write-Host ""
+    Write-Host "  [!] You need chocolatey to use this program."
+    Write-Host ""
 }
 
 menu

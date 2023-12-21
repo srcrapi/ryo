@@ -22,12 +22,12 @@ function chocoUninstall {
 
 function IDEuninstall {
     Write-Host ""
-    Write-Host "[*] Select one IDE:"
+    Write-Host "  [*] Select one IDE:"
     Write-Host ""
-    Write-Host "[1] Visual Studio Code"
-    Write-Host "[2] VSCodium"
-    Write-Host "[3] Pycharm"
-    Write-Host "[4] Visual Studio"
+    Write-Host "  [1] Visual Studio Code"
+    Write-Host "  [2] VSCodium"
+    Write-Host "  [3] Pycharm"
+    Write-Host "  [4] Visual Studio"
     Write-Host ""
 
     $ide_option = Read-Host "-> Option "
@@ -55,7 +55,26 @@ function IDEuninstall {
         }
     }
 
-    Write-Host "[!] $ide uninstalled sucessfuly."
+    Write-Host ""
+    Write-Host "  [!] $ide uninstalled sucessfuly."
+
+    $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
+
+    while (
+        $chose.ToLower() -ne "y" -and
+        $chose.ToLower() -ne "yes" -and
+        $chose.ToLower() -ne "n" -and
+        $chose.ToLower() -ne "no"
+    ) {
+        Write-Host "  [!] Enter a valid value."
+        $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
+    }
+
+    if ($chose.ToLower() -eq "y" -or $chose.ToLower() -eq "yes") {
+        menu
+    }
+
+    exit
 }
 
 function uninstallAll {
@@ -65,28 +84,28 @@ function uninstallAll {
 
     if ($confirmation -eq "confirmStandard") {
         Write-Host ""
-        Write-Host "[*] Select one browser to uninstall:"
+        Write-Host "  [*] Select one browser to uninstall:"
         Write-Host ""
-        Write-Host "[1] Firefox"
-        Write-Host "[2] Vivaldi"
-        Write-Host "[3] Chrome"
-        Write-Host "[4] Chromium"
-        Write-Host "[5] Waterfox"
-        Write-Host "[6] Brave"
-        Write-Host "[7] OperaGX"
+        Write-Host "  [1] Firefox"
+        Write-Host "  [2] Vivaldi"
+        Write-Host "  [3] Chrome"
+        Write-Host "  [4] Chromium"
+        Write-Host "  [5] Waterfox"
+        Write-Host "  [6] Brave"
+        Write-Host "  [7] OperaGX"
         Write-Host ""
     }
 
     if ($confirmation -eq "confirmDev") {
         Write-Host ""
-        Write-Host "[*] Select one browser:"
+        Write-Host "  [*] Select one browser:"
         Write-Host ""
-        Write-Host "[1] Firefox"
-        Write-Host "[2] Vivaldi"
-        Write-Host "[3] Chrome"
-        Write-Host "[4] Chromium"
-        Write-Host "[5] Waterfox"
-        Write-Host "[6] Brave"
+        Write-Host "  [1] Firefox"
+        Write-Host "  [2] Vivaldi"
+        Write-Host "  [3] Chrome"
+        Write-Host "  [4] Chromium"
+        Write-Host "  [5] Waterfox"
+        Write-Host "  [6] Brave"
         Write-Host ""
     }
 
@@ -125,24 +144,24 @@ function uninstallAll {
         }
 
         Default {
-            Write-Host "[!] Enter a valid number."
+            Write-Host "  [!] Enter a valid number."
         }
     }
 
-    Write-Host "[!] $browser uninstalled sucessfuly."
+    Write-Host "  [!] $browser uninstalled sucessfuly."
 
-    Write-Host "[-] Uninstalling discord..."
+    Write-Host "  [-] Uninstalling discord..."
     chocoUninstall "discord"
-    Write-Host "[!] Discord uninstalled"
+    Write-Host "  [!] Discord uninstalled"
 
-    Write-Host "[-] Uninstalling spotify..."
+    Write-Host "  [-] Uninstalling spotify..."
     chocoUninstall "spotify"
-    Write-Host "[!] Spotify uninstalled"
+    Write-Host "  [!] Spotify uninstalled"
 
     if ($confirmation -eq "confirmStandard") {
-        Write-Host "[-] Uninstalling epic games..."
+        Write-Host "  [-] Uninstalling epic games..."
         chocoUninstall "epicgameslauncher"
-        Write-Host "[!] Epic Games uninstalled"
+        Write-Host "  [!] Epic Games uninstalled"
         exit
     }
 
@@ -151,7 +170,7 @@ function uninstallAll {
 
 function StandardUninstall {
     Write-Host ""
-    Write-Host "[*] Do you want to uninstall all(y/n) "
+    Write-Host "  [*] Do you want to uninstall all(y/n) "
     Write-Host ""
 
     $uninstallAll_option = Read-Host "-> Option "
@@ -162,59 +181,69 @@ function StandardUninstall {
     }
 
     Write-Host ""
-    Write-Host "[*] Select one browser to uninstall:"
+    Write-Host "  [*] Select one browser to uninstall:"
     Write-Host ""
-    Write-Host "[1] Firefox"
-    Write-Host "[2] Vivaldi"
-    Write-Host "[3] Chrome"
-    Write-Host "[4] Chromium"
-    Write-Host "[5] Waterfox"
-    Write-Host "[6] Brave"
-    Write-Host "[7] OperaGX"
+    Write-Host "  [1] Firefox"
+    Write-Host "  [2] Vivaldi"
+    Write-Host "  [3] Chrome"
+    Write-Host "  [4] Chromium"
+    Write-Host "  [5] Waterfox"
+    Write-Host "  [6] Brave"
+    Write-Host "  [7] OperaGX"
     Write-Host ""
 
     $browser_option = Read-Host "-> Option "
 
-    switch ($browser_option) {
-        1 {
-            chocoUninstall "firefox"
-            $browser = "Firefox"
-        }
-        2 {
-            chocoUninstall "vivaldi" 
-            $browser = "Vivaldi"
-        }
-        3 {
-            chocoUninstall "googlechrome"
-            $browser = "Chrome"
-        }
-        4 {
-            wgUninstall "Hibbiki.Chromium" 
-            $browser = "Chromium"
-        }
-        5 {
-            chocoUninstall "waterfox" 
-            $browser = "Waterfox"
-        }
-        6 {
-            chocoUninstall "brave" 
-            $browser = "Brave"
-        }
-        7 {
-            chocoUninstall "opera-gx" 
-            $browser = "OperaGX"
-        }
-
-        Default {
-            Write-Host "[!] Enter a valid number."
+    while (-not ($browserSelected)) {
+        switch ($browser_option) {
+            1 {
+                chocoUninstall "firefox"
+                $browser = "Firefox"
+                $browserSelected = $true
+            }
+            2 {
+                chocoUninstall "vivaldi" 
+                $browser = "Vivaldi"
+                $browserSelected = $true
+            }
+            3 {
+                chocoUninstall "googlechrome"
+                $browser = "Chrome"
+                $browserSelected = $true
+            }
+            4 {
+                wgUninstall "Hibbiki.Chromium" 
+                $browser = "Chromium"
+                $browserSelected = $true
+            }
+            5 {
+                chocoUninstall "waterfox" 
+                $browser = "Waterfox"
+                $browserSelected = $true
+            }
+            6 {
+                chocoUninstall "brave" 
+                $browser = "Brave"
+                $browserSelected = $true
+            }
+            7 {
+                chocoUninstall "opera-gx" 
+                $browser = "OperaGX"
+                $browserSelected = $true
+            }
+    
+            Default {
+                Write-Host "  [!] Enter a valid number."
+            }
         }
     }
 
 
-    Write-Host "[!] $browser uninstalled sucessfuly."
+    Write-Host ""
+    Write-Host "  [!] $browser uninstalled sucessfuly."
 
     if (Test-Path $discordPath) {
-        $discord_option = Read-Host "[*] Do you want to uninstall discord(y/n) "
+        $discord_option = Read-Host "  [*] Do you want to uninstall discord(y/n) "
         
         while (
             $discord_option.ToLower() -ne "y" -and 
@@ -222,19 +251,19 @@ function StandardUninstall {
             $discord_option.ToLower() -ne "n" -and 
             $discord_option.ToLower() -ne "no"
         ) {
-            Write-Host "[!] Enter a valid option."
-            $discord_option = Read-Host "[*] Do you want to uninstall discord(y/n) "
+            Write-Host "  [!] Enter a valid option."
+            $discord_option = Read-Host "  [*] Do you want to uninstall discord(y/n) "
         }
 
         if ($discord_option.ToLower() -eq "y" -or $discord_option.ToLower() -eq "yes") {
-            Write-Host "[+] Uninstalling discord..."
+            Write-Host "  [+] Uninstalling discord..."
             chocoUninstall "discord"
-            Write-Host "[!] Discord uninstalled sucessfuly."
+            Write-Host "  [!] Discord uninstalled sucessfuly."
         }
     }
     
     if (Test-Path $epicGamesPath) {
-        $epic_option = Read-Host "[*] Do you want to uninstall Epic Games(y/n) "
+        $epic_option = Read-Host "  [*] Do you want to uninstall Epic Games(y/n) "
 
         while (
             $epic_option.ToLower() -ne "y" -and 
@@ -242,19 +271,19 @@ function StandardUninstall {
             $epic_option.ToLower() -ne "n" -and 
             $epic_option.ToLower() -ne "no"
         ) {
-            Write-Host "[!] Enter a valid option."
-            $epic_option = Read-Host "[*] Do you want to uninstall Epic Games(y/n) "  
+            Write-Host "  [!] Enter a valid option."
+            $epic_option = Read-Host "  [*] Do you want to uninstall Epic Games(y/n) "  
         }
 
         if ($epic_option.ToLower() -eq "y" -or $epic_option.ToLower() -eq "yes") {
-            Write-Host "[+] Uninstalling epic games..."
+            Write-Host "  [+] Uninstalling epic games..."
             chocoUninstall "epicgameslauncher"
-            Write-Host "[!] Epic Games uninstalled sucessfuly."
+            Write-Host "  [!] Epic Games uninstalled sucessfuly."
         }
     }
 
     if (Test-Path $spotifyPath) {
-        $spotify_option = Read-Host "[*] Do you want to uninstall spotify(y/n) "
+        $spotify_option = Read-Host "  [*] Do you want to uninstall spotify(y/n) "
 
         while (
             $spotify_option.ToLower() -ne "y" -and
@@ -262,20 +291,38 @@ function StandardUninstall {
             $spotify_option.ToLower() -ne "n" -and
             $spotify_option.ToLower() -ne "no"
         ) {
-            Write-Host "[!] Enter a valid option."
-            $spotify_option = Read-Host "[*] Do you want to uninstall spotify(y/n) "
+            Write-Host "  [!] Enter a valid option."
+            $spotify_option = Read-Host "  [*] Do you want to uninstall spotify(y/n) "
         }
 
         if ($spotify_option.ToLower() -eq "y" -or $spotify_option.ToLower() -eq "yes") {
-            Write-Host "[+] Uninstalling spotify..."
+            Write-Host "  [+] Uninstalling spotify..."
             chocoUninstall "spotify"
-            Write-Host "[!] Spotify uninstalled sucessfuly."
+            Write-Host "  [!] Spotify uninstalled sucessfuly."
         }
     }
+
+    $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
+
+    while (
+        $chose.ToLower() -ne "y" -and
+        $chose.ToLower() -ne "yes" -and
+        $chose.ToLower() -ne "n" -and
+        $chose.ToLower() -ne "no"
+    ) {
+        Write-Host "  [!] Enter a valid value."
+        $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
+    }
+
+    if ($chose.ToLower() -eq "y" -or $chose.ToLower() -eq "yes") {
+        menu
+    }
+
+    exit
 }
 function DevUninstall {
     Write-Host ""
-    Write-Host "[*] Do you want to uninstall all(y/n) "
+    Write-Host "  [*] Do you want to uninstall all(y/n) "
     Write-Host ""
 
     $uninstallAll_option = Read-Host "-> Option "
@@ -286,14 +333,14 @@ function DevUninstall {
     }
 
     Write-Host ""
-    Write-Host "[*] Select one browser:"
+    Write-Host "  [*] Select one browser:"
     Write-Host ""
-    Write-Host "[1] Firefox"
-    Write-Host "[2] Vivaldi"
-    Write-Host "[3] Chrome"
-    Write-Host "[4] Chromium"
-    Write-Host "[5] Waterfox"
-    Write-Host "[6] Brave"
+    Write-Host "  [1] Firefox"
+    Write-Host "  [2] Vivaldi"
+    Write-Host "  [3] Chrome"
+    Write-Host "  [4] Chromium"
+    Write-Host "  [5] Waterfox"
+    Write-Host "  [6] Brave"
     Write-Host ""
 
     $browser_option = Read-Host "-> Option "
@@ -325,14 +372,14 @@ function DevUninstall {
         }
 
         Default {
-            Write-Host "[!] Enter a valid number."
+            Write-Host "  [!] Enter a valid number."
         }
     }
 
-    Write-Host "[!] $browser uninstalled sucessfuly."
+    Write-Host "  [!] $browser uninstalled sucessfuly."
 
     if (Test-Path $discordPath) {
-        $discord_option = Read-Host "[*] Do you want to uninstall discord(y/n) "
+        $discord_option = Read-Host "  [*] Do you want to uninstall discord(y/n) "
         
         while (
             $discord_option.ToLower() -ne "y" -and 
@@ -340,19 +387,19 @@ function DevUninstall {
             $discord_option.ToLower() -ne "n" -and 
             $discord_option.ToLower() -ne "no"
         ) {
-            Write-Host "[!] Enter a valid option."
-            $discord_option = Read-Host "[*] Do you want to uninstall discord(y/n) "
+            Write-Host "  [!] Enter a valid option."
+            $discord_option = Read-Host "  [*] Do you want to uninstall discord(y/n) "
         }
 
         if ($discord_option.ToLower() -eq "y" -or $discord_option.ToLower() -eq "yes") {
-            Write-Host "[+] Uninstalling discord..."
+            Write-Host "  [+] Uninstalling discord..."
             chocoUninstall "discord"
-            Write-Host "[!] Discord uninstalled sucessfuly."
+            Write-Host "  [!] Discord uninstalled sucessfuly."
         }
     }
 
     if (Test-Path $spotifyPath) {
-        $spotify_option = Read-Host "[*] Do you want to uninstall spotify(y/n) "
+        $spotify_option = Read-Host "  [*] Do you want to uninstall spotify(y/n) "
 
         while (
             $spotify_option.ToLower() -ne "y" -and
@@ -360,14 +407,14 @@ function DevUninstall {
             $spotify_option.ToLower() -ne "n" -and
             $spotify_option.ToLower() -ne "no"
         ) {
-            Write-Host "[!] Enter a valid option."
-            $spotify_option = Read-Host "[*] Do you want to uninstall spotify(y/n) "
+            Write-Host "  [!] Enter a valid option."
+            $spotify_option = Read-Host "  [*] Do you want to uninstall spotify(y/n) "
         }
 
         if ($spotify_option.ToLower() -eq "y" -or $spotify_option.ToLower() -eq "yes") {
-            Write-Host "[+] Uninstalling spotify..."
+            Write-Host "  [+] Uninstalling spotify..."
             chocoUninstall "spotify"
-            Write-Host "[!] Spotify uninstalled sucessfuly."
+            Write-Host "  [!] Spotify uninstalled sucessfuly."
         }
 
         IDEuninstall
@@ -376,31 +423,37 @@ function DevUninstall {
 }
 
 function Uninstall {
+    showLogo
+
     Write-Host ""
-    Write-Host "     +-----------------+"
-    Write-Host "     |    Uninstall    |"
-    Write-Host "     +-----------------+"
+    Write-Host "                 +-----------------+" 
+    Write-Host "                 |    UnInstall    |"
+    Write-Host "                 +-----------------+"
     Write-Host ""
-    Write-Host "[1] Stantard Uninstallation"
-    Write-Host "[2] Dev Uninstallation"
-    Write-Host "[3] Back"
+    Write-Host "  [1] Stantard Installation     [2] Dev Installation"
+    Write-Host ""
+    Write-Host "                      [b] Back"
+    Write-Host ""
     Write-Host ""
 
-    $option = Read-Host "[?] Select one option "
+    $option = Read-Host "  [?] Select one option "
 
-    switch ($option) {
-        1 {
-            StandardUninstall
-        }
-        2 {
-            DevUninstall
-        }
-        3 {
-            menu
-        }
-
-        Default {
-            Write-Host "[!] Enter a valid number."
+    while ($true) {
+        switch ($option) {
+            1 {
+                StandardUninstall
+            }
+            2 {
+                DevUninstall
+            }
+            "b" {
+                menu
+            }
+    
+            Default {
+                Write-Host "  [!] Enter a valid number."
+                $option = Read-Host "  [?] Select one option "
+            }
         }
     }
 }
