@@ -40,6 +40,13 @@ If you get some error and can't do use this
 > Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unsigned
 ```
 
+<p>Add the "src" folder to your path</p>
+
+- Windows (powershell)
+```powershell
+> [Environment]::SetEnvironmentVariable("PATH", "$env:PATH;C:\Users\user\path\to\your\folder\src\", [System.EnvironmentVariableTarget]::User)
+```
+
 <br>
 
 <p>This program still in development and may contain bugs and bad visual.</p>

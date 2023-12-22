@@ -21,6 +21,13 @@
 | Windows 7 | ✓  |
 > Não tenho certeza se o Windows 7 funcionará corretamente
 
+<p>Adicione a pasta "src" no caminho</p>
+
+- Windows (powershell)
+```powershell
+> [Environment]::SetEnvironmentVariable("PATH", "$env:PATH;C:\Users\user\path\to\your\folder\src\", [System.EnvironmentVariableTarget]::User)
+```
+
 <br>
 <p>Este programa ainda está em desenvolvimento e pode conter bugs e mau visual</p>
 
