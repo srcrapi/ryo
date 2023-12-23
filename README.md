@@ -22,6 +22,7 @@
 > Not sure if windows 7 will work properly
 
 <br>
+## Usage
 
 <p>To make sure the script runs properly please set the right policy.</p>
 
@@ -40,7 +41,12 @@ If you get some error and can't do use this
 > Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unsigned
 ```
 
-<p>Add the "src" folder to your path</p>
+Clone this repository to any location you like
+```powershell
+> git clone https://github.com/srcrapi/ryo
+```
+
+<p>Inside ryo folder add the "src" folder to your path</p>
 
 - Windows (powershell)
 ```powershell
