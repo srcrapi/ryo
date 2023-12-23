@@ -23,6 +23,7 @@
 
 <br>
 
+<!-- Instructions -->
 ## Usage
 
 <p>To make sure the script runs properly please set the right policy.</p>
@@ -64,7 +65,7 @@ Clone this repository to any location you like
 
 ![Preview-2](resources/previews/preview2.png)
 
-
+<!-- Help -->
 ## Issues and Pull requests
 <p>
 	If you have any issue, just open one. <br>
