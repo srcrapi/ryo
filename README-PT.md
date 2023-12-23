@@ -1,4 +1,5 @@
 <!-- Header -->
+
 # Ryo
 
 ## Ryo é um instalador de aplicativos para fazer uma instalação base, e para os devs uma IDE
@@ -8,22 +9,25 @@
 </h2>
 
 <!-- Information -->
+
 ### Idiomas
 
 <p>[ <a href="README.md">English</a> ] [ <a href="README-PT.md">Portuguese</a> ]</p>
 
 ### Versão suporte OS
 
-| OS      | ✅   |
-| ------- | --- |
-| Windows 11 | ✓  |
-| Windows 10 | ✓  |
-| Windows 7 | ✓  |
+| OS         | ✅  |
+| ---------- | --- |
+| Windows 11 | ✓   |
+| Windows 10 | ✓   |
+| Windows 7  | ✓   |
+
 > Não tenho certeza se o Windows 7 funcionará corretamente
 
 <p>Adicione a pasta "src" no caminho</p>
 
 - Windows (powershell)
+
 ```powershell
 > [Environment]::SetEnvironmentVariable("PATH", "$env:PATH;C:\Users\user\path\to\your\folder\src\", [System.EnvironmentVariableTarget]::User)
 ```
@@ -38,6 +42,7 @@
 ![Preview-2](resources/previews/preview2.png)
 
 ## Questões e Solicitações
+
 <p>
 	Se tiveres alguma questão ou problema apenas abre uma.
 	<br>
