@@ -103,8 +103,6 @@ function StandardInstall {
     Write-Host "          ----------------"
     Write-Host "           [b] Back"
     Write-Host ""
-
-    
     
     $browser_option = Read-Host "  -> Option "
 
@@ -150,7 +148,7 @@ function StandardInstall {
             }
             
             Default {
-                Write-Host "  [!] Enter a valid number."
+                Write-Host "  [!] Enter a valid value."
                 $browser_option = Read-Host "  -> Option "
             }
         }
@@ -174,7 +172,7 @@ function StandardInstall {
 
         if ($discord_option.ToLower() -eq "y" -or $discord_option.ToLower() -eq "yes") {
             Write-Host "  [+] Installing discord..."
-            chocoUninstall "discord"
+            chocoInstall "discord"
             Write-Host "  [!] Discord installed sucessfuly."
         }
     }
@@ -182,17 +180,41 @@ function StandardInstall {
     if (-not (Test-Path $epicGamesPath)) {
         $epic_option = Read-Host "  [*] Do you want to install Epic Games(y/n) "
         
+        while (
+            $epic_option.ToLower() -ne "y" -and 
+            $epic_option.ToLower() -ne "yes" -and 
+            $epic_option.ToLower() -ne "n" -and 
+            $epic_option.ToLower() -ne "no"
+        ) {
+            Write-Host "  [!] Enter a valid option."
+            $epic_option = Read-Host "  [*] Do you want to install Epic Games(y/n) "
+        }
+
         if ($epic_option.ToLower() -eq "y" -or $epic_option.ToLower() -eq "yes") {
             Write-Host "  [+] Installing epic games..."
-            wgInstalchocoInstall "epicgameslauncher"
+            chocoInstall "epicgameslauncher"
             Write-Host "  [!] Epic Games installed sucessfuly."
         }
     }
 
     if (-not (Test-Path $spotifyPath)) {
-        Write-Host "  [+] Installing spotify..."
-        chocoInstall "spotify"
-        Write-Host "  [!] Spotify installed sucessfuly."
+        $spotify_option = Read-Host "  [*] Do you want to install spotify(y/n) "
+        
+        while (
+            $spotify_option.ToLower() -ne "y" -and 
+            $spotify_option.ToLower() -ne "yes" -and 
+            $spotify_option.ToLower() -ne "n" -and 
+            $spotify_option.ToLower() -ne "no"
+        ) {
+            Write-Host "  [!] Enter a valid option."
+            $spotify_option = Read-Host "  [*] Do you want to install spotify(y/n) "
+        }
+
+        if ($spotify_option.ToLower() -eq "y" -or $spotify_option.ToLower() -eq "yes") {
+            Write-Host "  [+] Installing spotify..."
+            chocoInstall "spotify"
+            Write-Host "  [!] Spotify installed sucessfuly."
+        }
     }
 
     Write-Host "  [*] All the programs are installed."
