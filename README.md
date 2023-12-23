@@ -26,7 +26,7 @@
 <p>To make sure the script runs properly please set the right policy.</p>
 
 - RemoteSigned: Let you run local scripts
-- Unsigned: Let you run local scripts and internet scripts
+- Unsigned: Let you run local scripts and scripts from the internet
 > Chose only one.
 
 ```powershell
