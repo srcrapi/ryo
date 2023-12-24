@@ -61,7 +61,7 @@ function IDEinstall {
             }
     
             Default {
-                Write-Host "[!] Enter a valid value."
+                Write-Host "  [!] Enter a valid value."
                 $ide_option = Read-Host "  -> Option "
             }
         }
