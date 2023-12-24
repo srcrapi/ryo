@@ -24,6 +24,30 @@
 
 > Não tenho certeza se o Windows 7 funcionará corretamente
 
+<!-- Instructions -->
+
+## Uso
+
+<p>Para ter a certeza que o script vai rodar corretamente porfavor coloque a politica correta.</p>
+
+- RemoteSigned: Deixa rodar os scripts localmente
+- Unsigned: Deixa rodar os scripts localmente e os da internet
+  > Escolha apenas um.
+
+```powershell
+> Set-ExecutionPolicy RemoteSigned
+> Set-ExecutionPolicy Unsigned
+```
+
+Se tiver a dar algum erro tenta usar este
+
+```powershell
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unsigned
+```
+
+Clona este repositório para alguma localização que gostares
+
 <p>Adicione a pasta "src" no caminho</p>
 
 - Windows (powershell)
