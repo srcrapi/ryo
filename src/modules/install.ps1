@@ -20,6 +20,42 @@ function chocoInstall {
     choco install $package
 }
 
+function install_package {
+    param(
+        $package
+    )
+
+    switch ($package) {
+        "discord" {
+            $package_name = "Discord"
+        }
+        "epicgameslauncher" {
+            $package_name = "Discord"
+        }
+        "spotify" {
+            $package_name = "Discord"
+        }
+    }
+
+    $option = Read-Host "  [*] Do you want to install $package_name? (y/n) "
+        
+    while (
+        $option.ToLower() -ne "y" -and 
+        $option.ToLower() -ne "yes" -and 
+        $option.ToLower() -ne "n" -and 
+        $option.ToLower() -ne "no"
+    ) {
+        Write-Host "  [!] Enter a valid option."
+        $option = Read-Host "  [*] Do you want to install $package_name? (y/n) "
+    }
+
+    if ($option.ToLower() -eq "y" -or $option.ToLower() -eq "yes") {
+        Write-Host "  [+] Installing $package_name..."
+        chocoInstall $package
+        Write-Host "  [!] $package_name installed sucessfuly."
+    }
+}
+
 function IDEinstall {
     Write-Host ""
     Write-Host "  [*] Select one IDE:"
@@ -144,63 +180,15 @@ function StandardInstall {
     Write-Host "  [!] $browser installed sucessfuly."
 
     if (-not (Test-Path $discordPath)) {
-        $discord_option = Read-Host "  [*] Do you want to uninstall discord(y/n) "
-        
-        while (
-            $discord_option.ToLower() -ne "y" -and 
-            $discord_option.ToLower() -ne "yes" -and 
-            $discord_option.ToLower() -ne "n" -and 
-            $discord_option.ToLower() -ne "no"
-        ) {
-            Write-Host "  [!] Enter a valid option."
-            $discord_option = Read-Host "  [*] Do you want to install discord(y/n) "
-        }
-
-        if ($discord_option.ToLower() -eq "y" -or $discord_option.ToLower() -eq "yes") {
-            Write-Host "  [+] Installing discord..."
-            chocoInstall "discord"
-            Write-Host "  [!] Discord installed sucessfuly."
-        }
+        install_package "discord"
     }
     
     if (-not (Test-Path $epicGamesPath)) {
-        $epic_option = Read-Host "  [*] Do you want to install Epic Games(y/n) "
-        
-        while (
-            $epic_option.ToLower() -ne "y" -and 
-            $epic_option.ToLower() -ne "yes" -and 
-            $epic_option.ToLower() -ne "n" -and 
-            $epic_option.ToLower() -ne "no"
-        ) {
-            Write-Host "  [!] Enter a valid option."
-            $epic_option = Read-Host "  [*] Do you want to install Epic Games(y/n) "
-        }
-
-        if ($epic_option.ToLower() -eq "y" -or $epic_option.ToLower() -eq "yes") {
-            Write-Host "  [+] Installing epic games..."
-            chocoInstall "epicgameslauncher"
-            Write-Host "  [!] Epic Games installed sucessfuly."
-        }
+        install_package "epicgameslauncher"
     }
 
     if (-not (Test-Path $spotifyPath)) {
-        $spotify_option = Read-Host "  [*] Do you want to install spotify(y/n) "
-        
-        while (
-            $spotify_option.ToLower() -ne "y" -and 
-            $spotify_option.ToLower() -ne "yes" -and 
-            $spotify_option.ToLower() -ne "n" -and 
-            $spotify_option.ToLower() -ne "no"
-        ) {
-            Write-Host "  [!] Enter a valid option."
-            $spotify_option = Read-Host "  [*] Do you want to install spotify(y/n) "
-        }
-
-        if ($spotify_option.ToLower() -eq "y" -or $spotify_option.ToLower() -eq "yes") {
-            Write-Host "  [+] Installing spotify..."
-            chocoInstall "spotify"
-            Write-Host "  [!] Spotify installed sucessfuly."
-        }
+        install_package "spotify"
     }
 
     Write-Host "  [*] All the programs are installed."
@@ -276,19 +264,11 @@ function DevInstall {
     Write-Host "  [!] $browser installed sucessfuly."
 
     if (-not (Test-Path $discordPath)) {
-        $discord_option = Read-Host "  [*] Do you want to install discord(y/n) "
-    
-        if ($discord_option.ToLower() -eq "y" -or $discord_option.ToLower() -eq "yes") {
-            Write-Host "  [+] Installing discord..."
-            chocoInstall "discord"
-            Write-Host "  [!] Discord installed sucessfuly."
-        }
+        install_package "discord"
     }
 
     if (-not (Test-Path $spotifyPath)) {
-        Write-Host "  [+] Installing spotify..."
-        chocoInstall "spotify"
-        Write-Host "  [!] Spotify installed sucessfuly."
+        install_package "spotify"
     }
 
     IDEinstall
