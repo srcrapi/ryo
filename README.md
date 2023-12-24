@@ -51,7 +51,7 @@ If you get some error and can't do use this
 Clone this repository to any location you like
 
 ```powershell
-> git clone https://github.com/srcrapi/ryo
+> git clone https://github.com/srcrapi/ryo.git
 ```
 
 <p>Inside ryo folder add the "src" folder to your path</p>
