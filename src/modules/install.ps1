@@ -70,21 +70,7 @@ function IDEinstall {
     Write-Host ""
     Write-Host "  [!] $ide installed sucessfuly."
 
-    $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
-
-    while (
-        $chose.ToLower() -ne "y" -and
-        $chose.ToLower() -ne "yes" -and
-        $chose.ToLower() -ne "n" -and
-        $chose.ToLower() -ne "no"
-    ) {
-        Write-Host "  [!] Enter a valid value."
-        $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
-    }
-
-    if ($chose.ToLower() -eq "y" -or $chose.ToLower() -eq "yes") {
-        menu
-    }
+    Write-Host "  [*] All the programs are installed."
 
     exit
 }
@@ -218,22 +204,6 @@ function StandardInstall {
     }
 
     Write-Host "  [*] All the programs are installed."
-
-    $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
-
-    while (
-        $chose.ToLower() -ne "y" -and
-        $chose.ToLower() -ne "yes" -and
-        $chose.ToLower() -ne "n" -and
-        $chose.ToLower() -ne "no"
-    ) {
-        Write-Host "  [!] Enter a valid value."
-        $chose = Read-Host "  [*] Do you want to go back to the menu(y/n) "
-    }
-
-    if ($chose.ToLower() -eq "y" -or $chose.ToLower() -eq "yes") {
-        menu
-    }
 
     exit
 }
