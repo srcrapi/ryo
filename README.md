@@ -32,8 +32,6 @@
 - `chocolatey` and `winget`
   - Application installation
 
-<br>
-
 <!-- Instructions -->
 
 ## Usage
