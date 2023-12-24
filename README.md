@@ -10,9 +10,11 @@
 
 <!-- Information -->
 
-### Languages
+## Languages
 
 <p>[ <a href="README.md">English</a> ] [ <a href="README-PT.md">Portuguese</a> ]</p>
+
+## Requeriments
 
 ### OS version support
 
@@ -23,6 +25,12 @@
 | Windows 7  | ✓   |
 
 > Not sure if windows 7 will work properly
+
+### Dependencies
+
+- `python 3.5+`
+- `chocolatey` and `winget`
+  - Application installation
 
 <br>
 
