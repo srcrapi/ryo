@@ -30,10 +30,10 @@ function install_package {
             $package_name = "Discord"
         }
         "epicgameslauncher" {
-            $package_name = "Discord"
+            $package_name = "Epic Games"
         }
         "spotify" {
-            $package_name = "Discord"
+            $package_name = "Spotify"
         }
     }
 
