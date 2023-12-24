@@ -59,6 +59,8 @@ Clona este repositório para alguma localização que gostares
 <br>
 <p>Este programa ainda está em desenvolvimento e pode conter bugs e mau visual</p>
 
+<!-- Help -->
+
 ## Preview
 
 ![Preview-1](resources/previews/preview1.png)
