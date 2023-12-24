@@ -1,5 +1,6 @@
 # includes
 
+import ryo
 from modules import common
 import os
 
@@ -322,7 +323,7 @@ def Uninstall():
         DevUninstall()
         break
       case "b":
-        menu()
+        ryo.menu()
         break
       case _:
         print("  [!] Enter a valid value")
