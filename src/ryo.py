@@ -1,5 +1,6 @@
 # includes
 
+from modules import developmentEnvironments
 from modules import common
 from modules import install
 from modules import uninstall
@@ -44,7 +45,7 @@ def menu():
     common.showLogo()
 
     print("""\n
-         [1] Install       [2] Uninstall\n
+         [1] Development Environments       [2] Uninstall\n
       [a] About ryo script         [q] Exit\n\n""")
     
     try:
@@ -52,7 +53,7 @@ def menu():
 
         match option:
             case "1":
-                install.Install()
+                developmentEnvironments.ideMenu()
             case "2":
                 uninstall.Uninstall()
             case "a":
