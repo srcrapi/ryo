@@ -29,8 +29,8 @@
 ### Dependencies
 
 - `python 3.10+`
-- `chocolatey` and `winget`
-  - Application installation
+- `scoop`
+  - Application installer
 
 <!-- Instructions -->
 
