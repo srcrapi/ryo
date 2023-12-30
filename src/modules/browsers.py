@@ -9,7 +9,7 @@ from modules import common
 def installBrowser(browser, package, site):
   from ryo import menu
 
-  print(f"\n  {common.bblue}[*]{common.blue} Preparing to install {browser}")
+  print(f"\n  {common.bblue}[*]{common.blue} Preparing to install {common.bwhite}{browser}")
   print(f"  {common.bblue}[*] {common.blue}You can find more information about here: {common.purple}{site}\n\n")
   print(f"  {common.borange}[*] {common.orange}Press any key to continue", end="")
   os.system("pause > null")
@@ -69,6 +69,6 @@ def browserMenu():
     case "b":
       menu()
     case _:
-      print(f"\n  {common.bred}[!] {common.red}\"{option_browser}\" is not a valid option.{common.red}")
+      print(f"\n  {common.bred}[!] {common.red}\"{option_browser}\" is not a valid option.{common.white}")
       sleep(2)
       browserMenu()

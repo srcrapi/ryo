@@ -63,7 +63,7 @@ def menu():
             case "q":
                 ryoExit()
             case _:
-                print(f"\n  {common.bred}[!] {common.red}\"{option}\" is not a valid option.{common.red}")
+                print(f"\n  {common.bred}[!] {common.red}\"{option}\" is not a valid option.{common.white}")
                 sleep(2)
                 menu()
     except:
