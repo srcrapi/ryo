@@ -35,6 +35,21 @@ bpurple = '\033[1;35m'
 
 # Functions
 
+def installPackage(package):
+  if package == "visualstudiocommunity2013":
+    os.system("choco install visualstudiocommunity2013")
+
+  else:
+    os.system("scoop install add extras > null")
+
+    command = f"scoop install {package}"
+
+    os.system(command)
+
+def handleError(message, error):
+  print(f"  {borange}->{white} {message} : {red}{error}{white}")
+  exit()
+
 def showLogo():
     os.system("cls")
     

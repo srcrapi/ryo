@@ -6,21 +6,6 @@ from modules import common
 
 # code
 
-def handleError(message, error):
-  print(f"  {common.borange}->{common.white} {message} : {common.red}{error}{common.white}")
-  exit()
-
-def installPackage(package):
-  if package == "visualstudiocommunity2013":
-    os.system("choco install visualstudiocommunity2013")
-
-  else:
-    os.system("scoop install add extras > null")
-
-    command = f"scoop install {package}"
-
-    os.system(command)
-
 def installIDE(ide, package, site):
   from ryo import menu
 
@@ -31,7 +16,7 @@ def installIDE(ide, package, site):
 
   try:
     print(f"\n\n  {common.bgreen}[-] {common.green}Installing {ide}{common.white}...")
-    installPackage(package)
+    common.installPackage(package)
     print(f"\n  {common.bgreen}[+] {common.green}{ide} sucessfuly installed{common.white}\n")
     
     print(f"  {common.bblue}[*] {common.blue}Press any key to return to ryo menu{common.white}", end="")
@@ -39,7 +24,7 @@ def installIDE(ide, package, site):
 
     menu()
   except Exception as error:
-    handleError(f"Error trying to install {ide}", error)
+    common.handleError(f"Error trying to install {ide}", error)
 
 def ideMenu():
   from ryo import menu
