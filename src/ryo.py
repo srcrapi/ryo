@@ -2,8 +2,8 @@
 
 from modules import developmentEnvironments
 from modules import common
-from modules import install
 from modules import uninstall
+from time import sleep
 
 # ryo 1.0
 
@@ -19,7 +19,7 @@ def showAbout():
     print("  |                Author  : rap1                  |")
     print("  +------------------------------------------------+\n")
     print("  Description\n")
-    print("  Ryo is a script write in powershell")
+    print("  Ryo is a script write in python")
     print("  with the objetive to be an app installer for windows.\n")
     print("                      [b] Back\n\n")
 
@@ -45,8 +45,10 @@ def menu():
     common.showLogo()
 
     print("""\n
-         [1] Development Environments       [2] Uninstall\n
-      [a] About ryo script         [q] Exit\n\n""")
+  [1] Development Environments       
+  [2] Uninstall\n
+          
+       [a] About ryo script         [q] Exit\n\n""")
     
     try:
         option = str(input("  [?] Select one option : "))
@@ -61,7 +63,9 @@ def menu():
             case "q":
                 ryoExit()
             case _:
-                print("  [!] Enter a valid value.\n")
+                print(f"\n  [!] \"{option}\" is not a valid option.")
+                sleep(2)
+                menu()
     except:
         print("\n\n  [!] Program Interrupted\n")
         
