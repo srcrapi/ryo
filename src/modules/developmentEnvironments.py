@@ -23,8 +23,8 @@ def installIDE(ide, package, site):
     os.system("pause > null")
 
     menu()
-  except Exception as error:
-    common.handleError(f"Error trying to install {ide}", error)
+  except:
+    common.handleError(f"Error trying to install {ide}")
 
 def ideMenu():
   from ryo import menu

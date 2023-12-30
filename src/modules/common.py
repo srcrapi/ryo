@@ -46,8 +46,8 @@ def installPackage(package):
 
     os.system(command)
 
-def handleError(message, error):
-  print(f"  {borange}->{white} {message} : {red}{error}{white}")
+def handleError(message):
+  print(f"  {borange}->{white} {message}")
   exit()
 
 def showLogo():
