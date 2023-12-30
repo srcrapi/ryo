@@ -42,9 +42,9 @@ def imageEditorMenu():
 
   match option_editor:
     case "1":
-      installImageEditor("Gimp")
+      installImageEditor("Gimp", "extras/gimp", "https://www.gimp.org")
     case "2":
-      installImageEditor("Krita")
+      installImageEditor("Krita", "extras/krita", "https://krita.org")
     case "b":
       menu()
     case _:
