@@ -1,6 +1,6 @@
 # includes
 
-from modules import developmentEnvironments, browsers
+from modules import developmentEnvironments, browsers, imageEditor
 from modules import common
 from modules import uninstall
 from time import sleep
@@ -46,7 +46,8 @@ def menu():
 
     print("""\n
   [1] Development Environments     
-  [2] Browsers\n
+  [2] Browsers
+  [3] Image Editors
           
        [a] About ryo script         [q] Exit\n\n""")
     
@@ -58,6 +59,8 @@ def menu():
                 developmentEnvironments.ideMenu()
             case "2":
                 browsers.browserMenu()
+            case "3":
+                imageEditor.imageEditorMenu()
             case "a":
                 showAbout()
             case "q":

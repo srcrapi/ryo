@@ -31,7 +31,7 @@ def imageEditorMenu():
   
   common.showLogo()
 
-  print(f"{common.bwhite}  | Image Editor |{common.white}\n")
+  print(f"{common.bwhite}  | Image Editors |{common.white}\n")
   print("  Choice :\n")
   print("  \t[1]\tGimp")
   print("  \t[2]\tKrita")
