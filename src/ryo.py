@@ -1,6 +1,6 @@
 # includes
 
-from modules import developmentEnvironments
+from modules import developmentEnvironments, browsers
 from modules import common
 from modules import uninstall
 from time import sleep
@@ -45,8 +45,8 @@ def menu():
     common.showLogo()
 
     print("""\n
-  [1] Development Environments       
-  [2] Uninstall\n
+  [1] Development Environments     
+  [2] Browsers\n
           
        [a] About ryo script         [q] Exit\n\n""")
     
@@ -57,7 +57,7 @@ def menu():
             case "1":
                 developmentEnvironments.ideMenu()
             case "2":
-                uninstall.Uninstall()
+                browsers.browserMenu()
             case "a":
                 showAbout()
             case "q":
