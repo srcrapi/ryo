@@ -7,7 +7,7 @@ from modules import common
 # code
 
 def handleError(message, error):
-  print(f"  -> {message} : {error}")
+  print(f"  {common.borange}->{common.white} {message} : {common.red}{error}{common.white}")
   exit()
 
 def installPackage(package):
@@ -24,17 +24,17 @@ def installPackage(package):
 def installIDE(ide, package, site):
   from ryo import menu
 
-  print(f"\n  [*] Preparing to install {ide}\n")
-  print(f"  [*] You can find more information about here: {site}\n\n")
-  print("  [*] Press any key to continue", end="")
+  print(f"\n  {common.bblue}[*]{common.blue} Preparing to install {ide}")
+  print(f"  {common.bblue}[*] {common.blue}You can find more information about here: {common.purple}{site}\n\n")
+  print(f"  {common.borange}[*] {common.orange}Press any key to continue", end="")
   os.system("pause > null")
 
   try:
-    print(f"\n\n  [-] Installing {ide}...")
+    print(f"\n\n  {common.bgreen}[-] {common.green}Installing {ide}{common.white}...")
     installPackage(package)
-    print(f"\n  [+] {ide} sucessfuly installed")
+    print(f"\n  {common.bgreen}[+] {common.green}{ide} sucessfuly installed{common.white}\n")
     
-    print("  [*] Press any key to return to ryo menu", end="")
+    print(f"  {common.bblue}[*] {common.blue}Press any key to return to ryo menu{common.white}", end="")
     os.system("pause > null")
 
     menu()
@@ -46,7 +46,7 @@ def ideMenu():
 
   common.showLogo()
   
-  print("  | Development Environments |\n")
+  print(f"{common.bwhite}  | Development Environments |{common.white}\n")
   print("  Choice :\n")
   print("  \t[1]\tArduino")
   print("  \t[2]\tVisual Studio Code")
@@ -62,7 +62,7 @@ def ideMenu():
   print("       --------------------------")
   print("  \t[b] return to main menu\n")
 
-  option_ide = str(input("  -> Option : "))
+  option_ide = str(input(f"  {common.borange}[?]{common.white} Option : "))
 
   match option_ide:
     case "1":
@@ -90,6 +90,6 @@ def ideMenu():
     case "b":
       menu()
     case _:
-      print(f"\n  [!] \"{option_ide}\" is not a valid option.")
+      print(f"\n  {common.bred}[!] {common.red}\"{option_ide}\" is not a valid option.{common.red}")
       sleep(2)
       ideMenu()

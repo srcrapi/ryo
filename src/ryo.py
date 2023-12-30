@@ -11,16 +11,16 @@ def showAbout():
     common.showLogo()
     
     print("  +------------------------------------------------+")
-    print("  |                      Ryo                       |")
-    print("  |          Windows Application Installer         |")
+    print(f"  |                      {common.bblue}Ryo{common.white}                       |")
+    print(f"  |          {common.orange}Windows Application Installer{common.white}         |")
     print("  +------------------------------------------------+")
-    print("  |                OS      : Windows               |")
-    print("  |                Version : 1.0                   |")
-    print("  |                Author  : rap1                  |")
+    print(f"  |                {common.bwhite}OS{common.white}      : {common.bpurple}Windows{common.white}               |")
+    print(f"  |                {common.bwhite}Version{common.white} : {common.bpurple}1.0{common.white}                   |")
+    print(f"  |                {common.bwhite}Author{common.white}  : {common.bpurple}rap1{common.white}                  |")
     print("  +------------------------------------------------+\n")
-    print("  Description\n")
-    print("  Ryo is a script write in python")
-    print("  with the objetive to be an app installer for windows.\n")
+    print(f"  {common.bred}Description\n")
+    print(f"  {common.blue}Ryo is a script write in python")
+    print(f"  with the objetive to be an app installer for windows.{common.white}\n")
     print("                      [b] Back\n\n")
 
     try:
@@ -37,9 +37,9 @@ def showAbout():
         
 
 def ryoExit():
-    print("""
-  [*] Thank you for using ryo.
-  [*] For more info you can always contact me on discord: .rap1\n""")
+    print(f"""
+  {common.bblue}[*]{common.white} Thank you for using {common.bwhite}ryo{common.white}.
+  {common.bblue}[*]{common.white} For more info you can always contact me on discord: {common.bpurple}.rap1{common.white}\n""")
 
 def menu():
     common.showLogo()
@@ -51,7 +51,7 @@ def menu():
        [a] About ryo script         [q] Exit\n\n""")
     
     try:
-        option = str(input("  [?] Select one option : "))
+        option = str(input(f"  {common.borange}[?]{common.white} Select one option : "))
 
         match option:
             case "1":
@@ -63,11 +63,11 @@ def menu():
             case "q":
                 ryoExit()
             case _:
-                print(f"\n  [!] \"{option}\" is not a valid option.")
+                print(f"\n  {common.bred}[!] {common.red}\"{option}\" is not a valid option.{common.red}")
                 sleep(2)
                 menu()
     except:
-        print("\n\n  [!] Program Interrupted\n")
+        print(f"\n\n  {common.bred}[!]{common.red} Program Interrupted{common.white}\n")
         
 
 if __name__ == "__main__":

@@ -15,22 +15,23 @@ ideSelected = False
 # Colors
 
 #Regular colors
-white='\033[0m'
-red='\033[0;31m'
-green='\e[0;32m'
-cyan='\033[0;96m'
-orange='\e[0;33m'
-blue='\e[0;34m'
-purple='\e[0;35m'
+white = '\033[0m'
+red = '\033[0;31m'
+green = '\033[0;32m'
+cyan = '\033[0;96m'
+orange = '\033[0;33m'
+blue = '\033[0;34m'
+purple = '\033[0;35m'
 
 #Bold colors
 
-bred='\033[1;31m'
-bgreen='\e[1;32m'
-bcyan='\033[1;96m'
-borange='\e[1;33m'
-bblue='\e[1;34m'
-bpurple='\e[1;35m'
+bwhite='\033[1m'
+bred = '\033[1;31m'
+bgreen = '\033[1;32m'
+bcyan = '\033[1;96m'
+borange = '\033[1;33m'
+bblue = '\033[1;34m'
+bpurple = '\033[1;35m'
 
 # Functions
 
@@ -41,19 +42,19 @@ def showLogo():
     sleep(0.1)
     print("    |                                      |")
     sleep(0.1)
-    print("    |      ██████╗ ██╗   ██╗ ██████╗       |")
+    print(f"    |      {blue}██████{cyan}╗ {blue}██{cyan}╗   {blue}██{cyan}╗ {blue}██████{cyan}╗{white}       |")
     sleep(0.1)
-    print("    |      ██╔══██╗╚██╗ ██╔╝██╔═══██╗      |")
+    print(f"    |      {blue}██{cyan}╔══{blue}██{cyan}╗╚{blue}██{cyan}╗ {blue}██{cyan}╔╝{blue}██{cyan}╔═══{blue}██{cyan}╗{white}      |")
     sleep(0.1)
-    print("    |      ██████╔╝ ╚████╔╝ ██║   ██║      |")
+    print(f"    |      {blue}██████{cyan}╔╝ ╚{blue}████{cyan}╔╝ {blue}██{cyan}║   {blue}██{cyan}║{white}      |")
     sleep(0.1)
-    print("    |      ██╔══██╗  ╚██╔╝  ██║   ██║      |")
+    print(f"    |      {blue}██{cyan}╔══{blue}██{cyan}╗  ╚{blue}██{cyan}╔╝  {blue}██{cyan}║   {blue}██{cyan}║{white}      |")
     sleep(0.1)
-    print("    |      ██║  ██║   ██║   ╚██████╔╝      |")
+    print(f"    |      {blue}██{cyan}║  {blue}██{cyan}║   {blue}██{cyan}║   ╚{blue}██████{cyan}╔╝{white}      |")
     sleep(0.1)
-    print("    |      ╚═╝  ╚═╝   ╚═╝    ╚═════╝       |")
+    print(f"    |      {cyan}╚═╝  ╚═╝   ╚═╝    ╚═════╝{white}       |")
     sleep(0.1)
-    print("    |               By rap1                |")
+    print(f"    |               By {bblue}rap1{white}                |")
     sleep(0.1)
     print("    +--------------------------------------+\n")
     sleep(0.1)
