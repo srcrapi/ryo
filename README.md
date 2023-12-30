@@ -29,7 +29,7 @@
 ### Dependencies
 
 - `python 3.10+`
-- `scoop`
+- `scoop` and `choco`
   - Application installer
 
 <!-- Instructions -->
