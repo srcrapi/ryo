@@ -10,9 +10,11 @@
 
 <!-- Information -->
 
-### Idiomas
+## Idiomas
 
 <p>[ <a href="README.md">English</a> ] [ <a href="README-PT.md">Portuguese</a> ]</p>
+
+## Requerimentos
 
 ### Versão suporte OS
 
@@ -23,6 +25,12 @@
 | Windows 7  | ✓   |
 
 > Não tenho certeza se o Windows 7 funcionará corretamente
+
+### Dependencias
+
+- `python 3.10+`
+- `scoop` e `choco`
+  - Instalador de aplicativos
 
 <!-- Instructions -->
 
@@ -48,7 +56,11 @@ Se tiver a dar algum erro tenta usar este
 
 Clona este repositório para alguma localização que gostares
 
-<p>Adicione a pasta "src" no caminho</p>
+```powershell
+> git clone https://github.com/srcrapi/ryo.git
+```
+
+<p>Dentro da pasta ryo adicione a pasta "src" para o caminho do sistema</p>
 
 - Windows (powershell)
 
@@ -57,6 +69,7 @@ Clona este repositório para alguma localização que gostares
 ```
 
 <br>
+
 <p>Este programa ainda está em desenvolvimento e pode conter bugs e mau visual</p>
 
 ## Preview
@@ -71,7 +84,6 @@ Clona este repositório para alguma localização que gostares
 
 <p>
 	Se tiveres alguma questão ou problema apenas abre uma.
-	<br>
 	<strong>Solicitações são Bem-Vindas!</strong>
 </p>
 
