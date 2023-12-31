@@ -93,4 +93,4 @@ Clone this repository to any location you like
 ## Todo
 
 - [ ] **Make more installer options**
-- [ ] **Make installer categories instead of base installations**
+- [x] **Make installer categories instead of base installations**
