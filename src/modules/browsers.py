@@ -7,7 +7,7 @@ from modules import common
 # code
 
 def installBrowser(browser, package, site):
-  from ryo import menu
+  from main import menu
 
   print(f"\n  {common.bblue}[*]{common.blue} Preparing to install {common.bwhite}{browser}")
   print(f"  {common.bblue}[*] {common.blue}You can find more information about here: {common.purple}{site}\n\n")
@@ -27,7 +27,7 @@ def installBrowser(browser, package, site):
     common.handleError(f"Error trying to install {browser}")
 
 def browserMenu():
-  from ryo import menu
+  from main import menu
 
   common.showLogo()
 

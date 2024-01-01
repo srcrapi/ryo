@@ -7,7 +7,7 @@ from modules import common
 # code
 
 def installImageEditor(imageEditor, package, site):
-  from ryo import menu
+  from main import menu
 
   print(f"\n  {common.bblue}[*]{common.blue} Preparing to install {imageEditor}")
   print(f"  {common.bblue}[*] {common.blue}You can find more information about here: {common.purple}{site}\n\n")
@@ -27,7 +27,7 @@ def installImageEditor(imageEditor, package, site):
     common.handleError(f"Error trying to install {imageEditor}")
 
 def imageEditorMenu():
-  from ryo import menu
+  from main import menu
   
   common.showLogo()
 
