@@ -54,6 +54,3 @@ def socialAppsMenu():
       print(f"\n  {common.bred}[!] {common.red}\"{option_socialApps}\" is not a valid option.{common.white}")
       sleep(2)
       socialAppsMenu()
-
-
-socialAppsMenu()
