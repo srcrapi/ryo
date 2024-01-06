@@ -74,4 +74,5 @@ def menu():
     except:
         print(f"\n\n  {common.bred}[!]{common.red} Program Interrupted{common.white}\n")
         
-menu()
+if __name__ == "__main__":
+    menu()
