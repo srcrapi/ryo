@@ -1,6 +1,6 @@
 # includes
 
-from modules import developmentEnvironments, browsers, imageEditor
+from modules import developmentEnvironments, browsers, imageEditor, socialApps
 from modules import common
 from time import sleep
 
@@ -47,6 +47,7 @@ def menu():
   [1] Development Environments     
   [2] Browsers
   [3] Image Editors
+  [4] Social Apps
           
        [a] About ryo script         [q] Exit\n\n""")
     
@@ -60,6 +61,8 @@ def menu():
                 browsers.browserMenu()
             case "3":
                 imageEditor.imageEditorMenu()
+            case "4":
+                socialApps.socialAppsMenu()
             case "a":
                 showAbout()
             case "q":
