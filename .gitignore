@@ -1,5 +1,5 @@
 __pycache__
 bin
-src/ryo/Scripts
-src/ryo/Lib
-src/ryo/pyvenv.cfg
+Scripts
+Lib
+pyvenv.cfg
